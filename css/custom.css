@@ -13,3 +13,9 @@
   .menus_items .menus_item:nth-child(5) .menus_item_child {
     left: -70px;
   }
+
+  body {
+    background: url('/image1/blog1.jpg') no-repeat center center fixed !important;
+    background-size: cover !important;
+    background-color: transparent !important;
+  }
