@@ -20,11 +20,11 @@
     background-color: transparent !important;
   }
 
-  /* 翻页按钮居中 */
+  /* 翻页按钮居中
   #pagination {
     width: 100%;
     margin: auto;
-  }
+  } */
 
 /* 欢迎信息 */
 #welcome-info {
