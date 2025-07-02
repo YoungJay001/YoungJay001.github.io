@@ -65,6 +65,29 @@
     }
   
       
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          const hour = new Date().getHours()
+          const isNight = hour <= 6 || hour >= 18
+          if (theme === undefined) isNight ? activateDarkMode() : activateLightMode()
+          else theme === 'light' ? activateLightMode() : activateDarkMode()
+        
       
       const asideStatus = saveToLocal.get('aside-status')
       if (asideStatus !== undefined) {
@@ -104,7 +127,7 @@
     month: '个月前'
   },
   copyright: undefined,
-  lightbox: 'null',
+  lightbox: 'medium_zoom',
   Snackbar: undefined,
   infinitegrid: {
     js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid/dist/infinitegrid.min.js',
@@ -123,7 +146,7 @@
   isHighlightShrink: false,
   isToc: false,
   pageType: 'page'
-}</script><link rel="stylesheet" href="/css/custom.css"><link rel="stylesheet" href="/css/readPercent.css"><meta name="generator" content="Hexo 7.3.0"></head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><script>(()=>{
+}</script><link rel="stylesheet" href="/css/custom.css"><link rel="stylesheet" href="/css/readPercent.css"><link rel="stylesheet" href="/css/cat.css"><div id="myscoll"></div><!-- hexo injector head_end start --><link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-wowjs/lib/animate.min.css" media="print" onload="this.media='screen'"><link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-tag-plugins-plus@latest/lib/assets/font-awesome-animation.min.css" media="defer" onload="this.media='all'"><link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-tag-plugins-plus@latest/lib/tag_plugins.css" media="defer" onload="this.media='all'"><script src="https://npm.elemecdn.com/hexo-butterfly-tag-plugins-plus@latest/lib/assets/carousel-touch.js"></script><!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.3.0"></head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><script>(()=>{
   const $loadingBox = document.getElementById('loading-box')
   const $body = document.body
   const preloader = {
@@ -144,7 +167,7 @@
     btf.addGlobalFn('pjaxSend', preloader.initLoading, 'preloader_init')
     btf.addGlobalFn('pjaxComplete', preloader.endLoading, 'preloader_end')
   }
-})()</script><div id="web_bg" style="background-image: url(url(/image1/blog1.jpg));"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="/image1/blog1.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">3</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><span class="site-page group hide"><i class="fa-fw fa fa-heartbeat"></i><span> 清单</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/Gallery/"><i class="fa-fw fas fa-images"></i><span> 照片</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/comments/"><i class="fa-fw fas fa-envelope-open"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="page" id="body-wrap"><header class="not-home-page" id="page-header"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">发呆Jayの小世界</span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><span class="site-page group hide"><i class="fa-fw fa fa-heartbeat"></i><span> 清单</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/Gallery/"><i class="fa-fw fas fa-images"></i><span> 照片</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/comments/"><i class="fa-fw fas fa-envelope-open"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="page-site-info"><h1 id="site-title"></h1></div></header><main class="layout" id="content-inner"><div id="page"><div class="container" id="article-container"><h1 id="Live2D-Widget"><a href="#Live2D-Widget" class="headerlink" title="Live2D Widget"></a>Live2D Widget</h1><p><img src="https://forthebadge.com/images/badges/built-with-love.svg"><br><img src="https://forthebadge.com/images/badges/made-with-typescript.svg"><br><img src="https://forthebadge.com/images/badges/uses-css.svg"><br><img src="https://forthebadge.com/images/badges/contains-cat-gifs.svg"><br><img src="https://forthebadge.com/images/badges/powered-by-electricity.svg"><br><img src="https://forthebadge.com/images/badges/makes-people-smile.svg"></p>
+})()</script><div id="web_bg" style="background-image: url(url(/image1/blog1.jpg));"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="/image1/blog1.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">3</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">1</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">1</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><span class="site-page group hide"><i class="fa-fw fa fa-heartbeat"></i><span> 生活碎片</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/Gallery/"><i class="fa-fw fas fa-images"></i><span> 照片</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/comments/"><i class="fa-fw fas fa-envelope-open"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="page" id="body-wrap"><header class="not-home-page" id="page-header"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">发呆Jayの小世界</span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><span class="site-page group hide"><i class="fa-fw fa fa-heartbeat"></i><span> 生活碎片</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/Gallery/"><i class="fa-fw fas fa-images"></i><span> 照片</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/comments/"><i class="fa-fw fas fa-envelope-open"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="page-site-info"><h1 id="site-title"></h1></div></header><main class="layout" id="content-inner"><div id="page"><div class="container" id="article-container"><h1 id="Live2D-Widget"><a href="#Live2D-Widget" class="headerlink" title="Live2D Widget"></a>Live2D Widget</h1><p><img src="https://forthebadge.com/images/badges/built-with-love.svg" alt=""><br><img src="https://forthebadge.com/images/badges/made-with-typescript.svg" alt=""><br><img src="https://forthebadge.com/images/badges/uses-css.svg" alt=""><br><img src="https://forthebadge.com/images/badges/contains-cat-gifs.svg" alt=""><br><img src="https://forthebadge.com/images/badges/powered-by-electricity.svg" alt=""><br><img src="https://forthebadge.com/images/badges/makes-people-smile.svg" alt=""></p>
 <p><a href="README.md">中文</a></p>
 <h2 id="Features"><a href="#Features" class="headerlink" title="Features"></a>Features</h2><ul>
 <li>Add Live2D widget to web page</li>
@@ -155,16 +178,16 @@
 <p><em>Note: The character models above are for demonstration purposes only and are not included in this repository.</em></p>
 <p>You can also check out example web pages:</p>
 <ul>
-<li>Check the effect in the lower left corner of <a target="_blank" rel="noopener" href="https://zhangshuqiao.org/">Mimi’s Blog</a></li>
-<li><a target="_blank" rel="noopener" href="https://live2d-widget.pages.dev/demo/demo">demo&#x2F;demo.html</a> to demonstrate basic functionality</li>
-<li><a target="_blank" rel="noopener" href="https://live2d-widget.pages.dev/demo/login">demo&#x2F;login.html</a> to imitate the login interface of NPM</li>
+<li>Check the effect in the lower left corner of <a target="_blank" rel="noopener" href="https://zhangshuqiao.org">Mimi’s Blog</a></li>
+<li><a target="_blank" rel="noopener" href="https://live2d-widget.pages.dev/demo/demo">demo/demo.html</a> to demonstrate basic functionality</li>
+<li><a target="_blank" rel="noopener" href="https://live2d-widget.pages.dev/demo/login">demo/login.html</a> to imitate the login interface of NPM</li>
 </ul>
 <h2 id="Usage"><a href="#Usage" class="headerlink" title="Usage"></a>Usage</h2><p>If you are a beginner or only need the basic functionality, you can simply add the following line of code to the <code>head</code> or <code>body</code> of your HTML page to load the widget:</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;https://fastly.jsdelivr.net/npm/live2d-widgets@1.0.0-rc.4/dist/autoload.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<p>The placement of the code depends on how your website is built. For example, if you are using <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>, you need to add the above code to the template file of your theme. The modification process is similar for pages generated using various template engines.<br>If your website uses PJAX, since the widget does not need to be refreshed on every page, make sure to place the script outside the PJAX refresh area.</p>
+<p>The placement of the code depends on how your website is built. For example, if you are using <a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a>, you need to add the above code to the template file of your theme. The modification process is similar for pages generated using various template engines.<br>If your website uses PJAX, since the widget does not need to be refreshed on every page, make sure to place the script outside the PJAX refresh area.</p>
 <p><strong>However, we strongly recommend configuring the widget yourself to make it more suitable for your website!</strong><br>If you are interested in customizing the widget, please refer to the detailed instructions below.</p>
 <h2 id="Configuration"><a href="#Configuration" class="headerlink" title="Configuration"></a>Configuration</h2><p>You can refer to the source code of <code>dist/autoload.js</code> to see the available configuration options. <code>autoload.js</code> will automatically load two files: <code>waifu.css</code> and <code>waifu-tips.js</code>. <code>waifu-tips.js</code> creates the <code>initWidget</code> function, which is the main function for loading the widget. The <code>initWidget</code> function accepts an object-type parameter as the configuration for the widget. The following are the available options:</p>
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -174,7 +197,8 @@
 <th>Description</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td><code>waifuPath</code></td>
 <td><code>string</code></td>
 <td><code>https://fastly.jsdelivr.net/npm/live2d-widgets@1/dist/waifu-tips.json</code></td>
@@ -222,7 +246,9 @@
 <td><code>error</code></td>
 <td>Log level: <code>error</code>, <code>warn</code>, <code>info</code>, <code>trace</code></td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
+</div>
 <h2 id="Model-Repository"><a href="#Model-Repository" class="headerlink" title="Model Repository"></a>Model Repository</h2><p>This repository does not include any models. You need to configure a separate model repository and set it via the <code>cdnPath</code> option.<br>Older versions of the <code>initWidget</code> function supported the <code>apiPath</code> parameter, which required users to set up their own backend. You can refer to <a target="_blank" rel="noopener" href="https://github.com/fghrsh/live2d_api">live2d_api</a> for details. The backend interface would integrate model resources and dynamically generate JSON description files. Since version 1.0, these features have been implemented on the frontend, so a dedicated <code>apiPath</code> is no longer required. All model resources can be provided statically. As long as <code>model_list.json</code> and the corresponding <code>textures.cache</code> for each model exist, features such as outfit changing are supported.</p>
 <h2 id="Development"><a href="#Development" class="headerlink" title="Development"></a>Development</h2><p>If the options provided in the “Configuration” section above are not enough to meet your needs, you can make modifications yourself. The directory structure of this repository is as follows:</p>
 <ul>
@@ -238,15 +264,12 @@
 </ul>
 <p>To deploy the development testing environment of this project locally, you need to install Node.js and npm, then execute the following commands:</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/stevenjoezhang/live2d-widget.git</span><br><span class="line">npm install</span><br></pre></td></tr></table></figure>
-
 <p>If you need to use Cubism 3 or newer models, please download and extract the Cubism SDK for Web separately into the <code>src</code> directory, for example, <code>src/CubismSdkForWeb-5-r.4</code>. Due to Live2D license agreements (including the Live2D Proprietary Software License Agreement and Live2D Open Software License Agreement), this project cannot include the source code of Cubism SDK for Web.<br>If you only need to use Cubism 2 models, you can skip this step. The code in this repository complies with the Redistributable Code terms of the Live2D license agreements.<br>Once completed, use the following command to compile and bundle the project.</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm run build</span><br></pre></td></tr></table></figure>
-
 <p>The TypeScript code in the <code>src</code> directory is compiled into the <code>build</code> directory, and the code in the <code>build</code> directory is further bundled into the <code>dist</code> directory.<br>To support both Cubism 2 and Cubism 3 (and newer) models while minimizing code size, Cubism Core and related code are loaded dynamically based on the detected model version.</p>
 <h2 id="Deploy"><a href="#Deploy" class="headerlink" title="Deploy"></a>Deploy</h2><p>After making modifications locally, you can deploy the modified project on a server or load it via a CDN. To make it easier to customize, you can fork this repository and push your modified content to your own repository using <code>git push</code>.</p>
 <h3 id="Using-jsDelivr-CDN"><a href="#Using-jsDelivr-CDN" class="headerlink" title="Using jsDelivr CDN"></a>Using jsDelivr CDN</h3><p>To load forked repository via jsDelivr, the usage method becomes:</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;https://fastly.jsdelivr.net/gh/username/live2d-widget@latest/autoload.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
 <p>Replace <code>username</code> with your GitHub username. To ensure the content of the CDN is refreshed correctly, you need to create a new git tag and push it to the GitHub repository. Otherwise, <code>@latest</code> in the URL will still point to the previous version. Additionally, CDN itself has caching, so the changes may take some time to take effect.</p>
 <h3 id="Using-Cloudflare-Pages"><a href="#Using-Cloudflare-Pages" class="headerlink" title="Using Cloudflare Pages"></a>Using Cloudflare Pages</h3><p>You can also deploy using Cloudflare Pages. Create a new project in Cloudflare Pages and select your forked repository. Then, set the build command to <code>npm run build</code>. Once configured, Cloudflare Pages will automatically build and deploy your project.</p>
 <h3 id="Self-host"><a href="#Self-host" class="headerlink" title="Self-host"></a>Self-host</h3><p>Alternatively, you can directly host these files on your server instead of loading them via CDN.</p>
@@ -256,39 +279,26 @@
 </ul>
 <p>Afterwards, the entire project can be accessed through your domain name. You can try opening the <code>autoload.js</code> and <code>live2d.min.js</code> files in your browser and confirm that their content is complete and correct.<br>If everything is normal, you can proceed to modify the constant <code>live2d_path</code> in <code>autoload.js</code> to the URL of the <code>dist</code> directory. For example, if you can access <code>live2d.min.js</code> through the following URL:</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https://example.com/path/to/live2d-widget/dist/live2d.min.js</span><br></pre></td></tr></table></figure>
-
 <p>then modify the value of <code>live2d_path</code> to:</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https://example.com/path/to/live2d-widget/dist/</span><br></pre></td></tr></table></figure>
-
 <p>Make sure to include the trailing <code>/</code> in the path.<br>Once done, add the following code to the interface where you want to add the live2d-widget:</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;https://example.com/path/to/live2d-widget/dist/autoload.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
 <p>This will load the widget.</p>
-<h2 id="Thanks"><a href="#Thanks" class="headerlink" title="Thanks"></a>Thanks</h2><a target="_blank" rel="noopener" href="https://www.browserstack.com/">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" height="80" srcset="https://d98b8t1nnulk5.cloudfront.net/production/images/layout/logo-header.png?1469004780">
-    <source media="(prefers-color-scheme: light)" height="80" srcset="https://live.browserstack.com/images/opensource/browserstack-logo.svg">
-    <img alt="BrowserStack Logo" height="80" src="https://live.browserstack.com/images/opensource/browserstack-logo.svg">
+<h2 id="Thanks"><a href="#Thanks" class="headerlink" title="Thanks"></a>Thanks</h2><p><a target="_blank" rel="noopener" href="https://www.browserstack.com/"><br>  <picture><br>    <source media="(prefers-color-scheme: dark)" height="80" srcset="https://d98b8t1nnulk5.cloudfront.net/production/images/layout/logo-header.png?1469004780"><br>    <source media="(prefers-color-scheme: light)" height="80" srcset="https://live.browserstack.com/images/opensource/browserstack-logo.svg"><br>    <img alt="BrowserStack Logo" height="80" src="https://live.browserstack.com/images/opensource/browserstack-logo.svg">
   </picture>
-</a>
-
+</a></p>
 <blockquote>
 <p>Thanks to <a target="_blank" rel="noopener" href="https://www.browserstack.com/">BrowserStack</a> for providing the infrastructure that allows us to test in real browsers!</p>
 </blockquote>
-<a target="_blank" rel="noopener" href="https://www.jsdelivr.com">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" height="80" srcset="https://raw.githubusercontent.com/jsdelivr/jsdelivr-media/master/white/svg/jsdelivr-logo-horizontal.svg">
-    <source media="(prefers-color-scheme: light)" height="80" srcset="https://raw.githubusercontent.com/jsdelivr/jsdelivr-media/master/default/svg/jsdelivr-logo-horizontal.svg">
-    <img alt="jsDelivr Logo" height="80" src="https://raw.githubusercontent.com/jsdelivr/jsdelivr-media/master/default/svg/jsdelivr-logo-horizontal.svg">
+<p><a target="_blank" rel="noopener" href="https://www.jsdelivr.com"><br>  <picture><br>    <source media="(prefers-color-scheme: dark)" height="80" srcset="https://raw.githubusercontent.com/jsdelivr/jsdelivr-media/master/white/svg/jsdelivr-logo-horizontal.svg"><br>    <source media="(prefers-color-scheme: light)" height="80" srcset="https://raw.githubusercontent.com/jsdelivr/jsdelivr-media/master/default/svg/jsdelivr-logo-horizontal.svg"><br>    <img alt="jsDelivr Logo" height="80" src="https://raw.githubusercontent.com/jsdelivr/jsdelivr-media/master/default/svg/jsdelivr-logo-horizontal.svg">
   </picture>
-</a>
-
+</a></p>
 <blockquote>
 <p>Thanks to jsDelivr for providing public CDN service.</p>
 </blockquote>
 <p>Thanks fghrsh for providing API service.</p>
-<p>Thanks to <a target="_blank" rel="noopener" href="https://hitokoto.cn/">Hitokoto</a> for providing the sentence API.</p>
-<p>When you click on the paper airplane button of the virtual assistant, a hidden surprise will appear. This feature is from <a target="_blank" rel="noopener" href="http://www.websiteasteroids.com/">WebsiteAsteroids</a>.</p>
+<p>Thanks to <a target="_blank" rel="noopener" href="https://hitokoto.cn">Hitokoto</a> for providing the sentence API.</p>
+<p>When you click on the paper airplane button of the virtual assistant, a hidden surprise will appear. This feature is from <a target="_blank" rel="noopener" href="http://www.websiteasteroids.com">WebsiteAsteroids</a>.</p>
 <h2 id="More"><a href="#More" class="headerlink" title="More"></a>More</h2><p>The code is modified based on this blog post:<br><a target="_blank" rel="noopener" href="https://www.fghrsh.net/post/123.html">https://www.fghrsh.net/post/123.html</a></p>
 <p>For more information, you can refer to the following links:<br><a target="_blank" rel="noopener" href="https://nocilol.me/archives/lab/add-dynamic-poster-girl-with-live2d-to-your-blog-02">https://nocilol.me/archives/lab/add-dynamic-poster-girl-with-live2d-to-your-blog-02</a><br><a target="_blank" rel="noopener" href="https://github.com/guansss/pixi-live2d-display">https://github.com/guansss/pixi-live2d-display</a></p>
 <p>For more models:<br><a target="_blank" rel="noopener" href="https://github.com/zenghongtu/live2d-model-assets">https://github.com/zenghongtu/live2d-model-assets</a></p>
@@ -302,4 +312,183 @@
 <p>License for Live2D Cubism SDK 5:<br>Live2D Cubism Core is provided under the Live2D Proprietary Software License.<br><a target="_blank" rel="noopener" href="https://www.live2d.com/eula/live2d-proprietary-software-license-agreement_en.html">https://www.live2d.com/eula/live2d-proprietary-software-license-agreement_en.html</a><br>Live2D Cubism Components are provided under the Live2D Open Software License.<br><a target="_blank" rel="noopener" href="https://www.live2d.com/eula/live2d-open-software-license-agreement_en.html">https://www.live2d.com/eula/live2d-open-software-license-agreement_en.html</a></p>
 <h2 id="Update-Log"><a href="#Update-Log" class="headerlink" title="Update Log"></a>Update Log</h2><p>Starting from January 1, 2020, this project no longer depends on jQuery.</p>
 <p>Starting from November 1, 2022, this project no longer requires users to separately load Font Awesome.</p>
-</div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="/image1/blog1.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">发呆Jay</div><div class="author-info-description">个人博客，生活日记</div><div class="site-data"><a href="/archives/"><div class="headline">文章</div><div class="length-num">3</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://space.bilibili.com/1416687695?spm_id_from=333.1007.0.0"><i class="fab fa-bilibili"></i><span>关注我</span></a><div class="card-info-social-icons"><a class="social-icon" href="https://github.com/YoungJay001" target="_blank" title="Github"><i class="fab fa-github" style="color: #24292e;"></i></a><a class="social-icon" href="https://space.bilibili.com/1416687695?spm_id_from=333.1007.0.0" target="_blank" title="b站"><i class="fab fa-bilibili" style="color: #4a7dbe;"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div><div id="welcome-info"></div></div><div class="sticky_layout"><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>网站信息</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">文章数目 :</div><div class="item-count">3</div></div><div class="webinfo-item"><div class="item-name">本站总字数 :</div><div class="item-count">2.3k</div></div><div class="webinfo-item"><div class="item-name">本站访客数 :</div><div class="item-count" id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">本站总浏览量 :</div><div class="item-count" id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">最后更新时间 :</div><div class="item-count" id="last-push-date" data-lastPushDate="2025-07-01T06:36:40.618Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2019 - 2025 By 发呆Jay</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo 7.3.0</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly 5.3.5</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i><span id="percent">0</span><span>%   </span></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><div class="js-pjax"></div><script src="/live2d-widget/dist/autoload.js"></script><script src="https://cdn.staticfile.org/jquery/3.6.3/jquery.min.js"></script><script async data-pjax src="/js/txmap.js"></script><script defer data-pjax src="/js/readPercent.js"></script><canvas class="fireworks" mobile="false"></canvas><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/fireworks.min.js"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
+</div><hr class="custom-hr"/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div id="twikoo-wrap"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="/image1/blog1.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">发呆Jay</div><div class="author-info-description">个人博客，生活日记</div><div class="site-data"><a href="/archives/"><div class="headline">文章</div><div class="length-num">3</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">1</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">1</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://space.bilibili.com/1416687695?spm_id_from=333.1007.0.0"><i class="fab fa-bilibili"></i><span>关注我</span></a><div class="card-info-social-icons"><a class="social-icon" href="https://github.com/YoungJay001" target="_blank" title="Github"><i class="fab fa-github" style="color: #24292e;"></i></a><a class="social-icon" href="https://space.bilibili.com/1416687695?spm_id_from=333.1007.0.0" target="_blank" title="b站"><i class="fab fa-bilibili" style="color: #4a7dbe;"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div><div id="welcome-info"></div></div><div class="sticky_layout"><div class="card-widget" id="card-newest-comments"><div class="item-headline"><i class="fas fa-comment-dots"></i><span>最新评论</span></div><div class="aside-list"><span>加载中...</span></div></div><div class="card-widget card-categories"><div class="item-headline">
+            <i class="fas fa-folder-open"></i>
+            <span>分类</span>
+            
+          </div>
+          <ul class="card-category-list" id="aside-cat-list">
+            <li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E5%8C%BA%E5%9D%97%E9%93%BE/"><span class="card-category-list-name">区块链</span><span class="card-category-list-count">2</span></a></li>
+          </ul></div><div class="card-widget card-tags"><div class="item-headline"><i class="fas fa-tags"></i><span>标签</span></div><div class="card-tag-cloud"><a href="/tags/fiscobcos/" style="font-size: 1.15em; color: rgb(135, 167, 95);">fiscobcos</a></div></div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>网站信息</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">文章数目 :</div><div class="item-count">3</div></div><div class="webinfo-item"><div class="item-name">本站总字数 :</div><div class="item-count">2.3k</div></div><div class="webinfo-item"><div class="item-name">本站访客数 :</div><div class="item-count" id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">本站总浏览量 :</div><div class="item-count" id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">最后更新时间 :</div><div class="item-count" id="last-push-date" data-lastPushDate="2025-07-02T09:08:34.044Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2019 - 2025 By 发呆Jay</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo 7.3.0</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly 5.3.5</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><a id="to_comment" href="#post-comment" title="前往评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i><span id="percent">0</span><span>%   </span></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/medium-zoom/dist/medium-zoom.min.js"></script><div class="js-pjax"><script>(() => {
+  const isShuoshuo = GLOBAL_CONFIG_SITE.pageType === 'shuoshuo'
+  const option = null
+
+  const getCount = () => {
+    const countELement = document.getElementById('twikoo-count')
+    if(!countELement) return
+    twikoo.getCommentsCount({
+      envId: 'https://hexo-blog-twikoo-alpha.vercel.app/',
+      region: '',
+      urls: [window.location.pathname],
+      includeReply: false
+    }).then(res => {
+      countELement.textContent = res[0].count
+    }).catch(err => {
+      console.error(err)
+    })
+  }
+
+  const init = (el = document, path = location.pathname) => {
+    twikoo.init({
+      el: el.querySelector('#twikoo-wrap'),
+      envId: 'https://hexo-blog-twikoo-alpha.vercel.app/',
+      region: '',
+      onCommentLoaded: () => {
+        btf.loadLightbox(document.querySelectorAll('#twikoo .tk-content img:not(.tk-owo-emotion)'))
+      },
+      ...option,
+      path: isShuoshuo ? path : (option && option.path) || path
+    })
+
+    GLOBAL_CONFIG_SITE.pageType === 'post' && getCount()
+
+    isShuoshuo && (window.shuoshuoComment.destroyTwikoo = () => {
+      if (el.children.length) {
+        el.innerHTML = ''
+        el.classList.add('no-comment')
+      }
+    })
+  }
+
+  const loadTwikoo = (el, path) => {
+    if (typeof twikoo === 'object') setTimeout(() => init(el, path), 0)
+    else btf.getScript('https://cdn.jsdelivr.net/npm/twikoo/dist/twikoo.all.min.js').then(() => init(el, path))
+  }
+
+  if (isShuoshuo) {
+    'Twikoo' === 'Twikoo'
+      ? window.shuoshuoComment = { loadComment: loadTwikoo }
+      : window.loadOtherComment = loadTwikoo
+    return
+  }
+
+  if ('Twikoo' === 'Twikoo' || !true) {
+    if (true) btf.loadComment(document.getElementById('twikoo-wrap'), loadTwikoo)
+    else loadTwikoo()
+  } else {
+    window.loadOtherComment = loadTwikoo
+  }
+})()</script></div><script>window.newestComments = {
+  changeContent: content => {
+    if (content === '') return content
+
+    content = content.replace(/<img.*?src="(.*?)"?[^\>]+>/ig, '[图片]') // replace image link
+    content = content.replace(/<a[^>]+?href=["']?([^"']+)["']?[^>]*>([^<]+)<\/a>/gi, '[链接]') // replace url
+    content = content.replace(/<pre><code>.*?<\/pre>/gi, '[代码]') // replace code
+    content = content.replace(/<code>.*?<\/code>/gi, '[代码]') // replace code
+    content = content.replace(/<[^>]+>/g, "") // remove html tag
+
+    if (content.length > 150) {
+      content = content.substring(0, 150) + '...'
+    }
+    return content
+  },
+
+  generateHtml: (array, ele) => {
+    let result = ''
+
+    if (array.length) {
+      for (let i = 0; i < array.length; i++) {
+        result += '<div class="aside-list-item">'
+
+        if (true && array[i].avatar) {
+          const imgAttr = 'src'
+          const lazyloadNative = ''
+          result += `<a href="${array[i].url}" class="thumbnail"><img ${imgAttr}="${array[i].avatar}" alt="${array[i].nick}" ${lazyloadNative}></a>`
+        }
+
+        result += `<div class="content">
+        <a class="comment" href="${array[i].url}" title="${array[i].content}">${array[i].content}</a>
+        <div class="name"><span>${array[i].nick} / </span><time datetime="${array[i].date}">${btf.diffDate(array[i].date, true)}</time></div>
+        </div></div>`
+      }
+    } else {
+      result += '暂无评论'
+    }
+
+    ele.innerHTML = result
+    window.lazyLoadInstance && window.lazyLoadInstance.update()
+    window.pjax && window.pjax.refresh(ele)
+  },
+
+  newestCommentInit: (name, getComment) => {
+    const $dom = document.querySelector('#card-newest-comments .aside-list')
+    if ($dom) {
+      const data = btf.saveToLocal.get(name)
+      if (data) {
+        newestComments.generateHtml(JSON.parse(data), $dom)
+      } else {
+        getComment($dom)
+      }
+    }
+  },
+
+  run: (name, getComment) => {
+    newestComments.newestCommentInit(name, getComment)
+    btf.addGlobalFn('pjaxComplete', () => newestComments.newestCommentInit(name, getComment), name)
+  }
+}</script><script>window.addEventListener('load', () => {
+  const keyName = 'twikoo-newest-comments'
+  const { changeContent, generateHtml, run } = window.newestComments
+
+  const getComment = ele => {
+    const runTwikoo = () => {
+      twikoo.getRecentComments({
+        envId: 'https://hexo-blog-twikoo-alpha.vercel.app/',
+        region: '',
+        pageSize: 6,
+        includeReply: true
+      }).then(res => {
+        const twikooArray = res.map(e => {
+          return {
+            'content': changeContent(e.comment),
+            'avatar': e.avatar,
+            'nick': e.nick,
+            'url': e.url + '#' + e.id,
+            'date': new Date(e.created).toISOString()
+          }
+        })
+
+        btf.saveToLocal.set(keyName, JSON.stringify(twikooArray), 10/(60*24))
+        generateHtml(twikooArray, ele)
+      }).catch(err => {
+        console.error(err)
+        ele.textContent= "无法获取评论，请确认相关配置是否正确"
+      })
+    }
+
+    if (typeof twikoo === 'object') {
+      runTwikoo()
+    } else {
+      btf.getScript('https://cdn.jsdelivr.net/npm/twikoo/dist/twikoo.all.min.js').then(runTwikoo)
+    }
+  }
+
+  run(keyName, getComment)
+})</script><script src="/live2d-widget/dist/autoload.js"></script><script src="https://cdn.staticfile.org/jquery/3.6.3/jquery.min.js"></script><script async data-pjax src="/js/txmap.js"></script><script defer data-pjax src="/js/readPercent.js"></script><script src="/js/sakura.js"></script><script defer src="https://npm.elemecdn.com/jquery@latest/dist/jquery.min.js"></script><script defer data-pjax src="/js/cat.js"></script><canvas class="fireworks" mobile="false"></canvas><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/fireworks.min.js"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div><!-- hexo injector body_end start --><div class="js-pjax"><script async="async">var arr = document.getElementsByClassName('recent-post-item');
+for(var i = 0;i<arr.length;i++){
+    arr[i].classList.add('wow');
+    arr[i].classList.add('animate__zoomInRight');
+    arr[i].setAttribute('data-wow-duration', '2s');
+    arr[i].setAttribute('data-wow-delay', '1s');
+    arr[i].setAttribute('data-wow-offset', '100');
+    arr[i].setAttribute('data-wow-iteration', '1');
+  }</script><script async="async">var arr = document.getElementsByClassName('card-widget');
+for(var i = 0;i<arr.length;i++){
+    arr[i].classList.add('wow');
+    arr[i].classList.add('animate__rubberBand');
+    arr[i].setAttribute('data-wow-duration', '');
+    arr[i].setAttribute('data-wow-delay', '');
+    arr[i].setAttribute('data-wow-offset', '');
+    arr[i].setAttribute('data-wow-iteration', '');
+  }</script></div><script defer src="https://npm.elemecdn.com/hexo-butterfly-wowjs/lib/wow.min.js"></script><script defer src="https://npm.elemecdn.com/hexo-butterfly-wowjs/lib/wow_init.js"></script><script async src="//at.alicdn.com/t/font_2032782_8d5kxvn09md.js"></script><!-- hexo injector body_end end --></body></html>

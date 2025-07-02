@@ -1,0 +1,246 @@
+body::-webkit-scrollbar {
+    width: 0;
+}
+
+.neko {
+    width: 64px;
+    height: 64px;
+    background-image: url("https://bu.dusays.com/2022/07/20/62d812db74be9.png");
+    position: absolute;
+    right: 32px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    transform: translateX(50%);
+    cursor: pointer;
+    font-family: tzy;
+    font-weight: 600;
+    font-size: 16px;
+    color: #6f42c1;
+    display: none;
+}
+
+.neko::after {
+    display: none;
+    width: 100px;
+    height: 100px;
+    background-image: url("https://bu.dusays.com/2022/07/20/62d812d95e6f5.png");
+    background-size: contain;
+    z-index: 9999;
+    position: absolute;
+    right: 50%;
+    text-align: center;
+    line-height: 100px;
+    top: -115%;
+
+}
+
+.neko.showMsg::after {
+    content: attr(data-msg);
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.neko:hover::after {
+    content: attr(data-msg);
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.neko.fontColor::after {
+    color: #333;
+}
+
+/**
+ * @description: 滚动条样式  跟猫二选一
+ */
+@media screen and (max-width:992px) {
+    ::-webkit-scrollbar {
+        width: 8px !important;
+        height: 8px !important
+    }
+
+    ::-webkit-scrollbar-track {
+        border-radius: 2em;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background-color: rgb(255 255 255 / .3);
+        background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, 0.1) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.1) 50%, rgba(255, 255, 255, 0.1) 75%, transparent 75%, transparent);
+        border-radius: 2em
+    }
+
+    ::-webkit-scrollbar-corner {
+        background-color: transparent
+    }
+}
+
+/* 分类和标签页面美化 */
+.category-list, .tag-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    padding: 20px 0;
+}
+
+.category-list-item, .tag-list-item {
+    background: var(--trans-light);
+    backdrop-filter: var(--backdrop-filter);
+    border: var(--border-style);
+    border-radius: 15px;
+    padding: 20px;
+    min-width: 200px;
+    text-align: center;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+.category-list-item:hover, .tag-list-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    border-color: #49b1f5;
+}
+
+.category-list-item::before, .tag-list-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+    transition: left 0.5s;
+}
+
+.category-list-item:hover::before, .tag-list-item:hover::before {
+    left: 100%;
+}
+
+.category-list-item a, .tag-list-item a {
+    color: inherit;
+    text-decoration: none;
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.category-list-item .category-name, .tag-list-item .tag-name {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.category-list-item .category-count, .tag-list-item .tag-count {
+    font-size: 14px;
+    color: #666;
+    background: rgba(73, 177, 245, 0.1);
+    padding: 5px 10px;
+    border-radius: 20px;
+    display: inline-block;
+}
+
+/* 分类和标签页面的标题样式 */
+.category-title, .tag-title {
+    text-align: center;
+    font-size: 2.5em;
+    font-weight: bold;
+    margin: 30px 0;
+    background: linear-gradient(45deg, #49b1f5, #f39c12, #e74c3c, #9b59b6);
+    background-size: 400% 400%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradientShift 3s ease-in-out infinite;
+}
+
+@keyframes gradientShift {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+}
+
+/* 分类和标签页面的描述 */
+.category-description, .tag-description {
+    text-align: center;
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 40px;
+    line-height: 1.6;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .category-list, .tag-list {
+        gap: 15px;
+        padding: 15px;
+    }
+    
+    .category-list-item, .tag-list-item {
+        min-width: 150px;
+        padding: 15px;
+    }
+    
+    .category-title, .tag-title {
+        font-size: 2em;
+        margin: 20px 0;
+    }
+}
+
+/* 夜间模式适配 */
+[data-theme="dark"] .category-list-item,
+[data-theme="dark"] .tag-list-item {
+    background: var(--trans-dark);
+    border-color: #444;
+}
+
+[data-theme="dark"] .category-list-item .category-name,
+[data-theme="dark"] .tag-list-item .tag-name {
+    color: #fff;
+}
+
+[data-theme="dark"] .category-list-item .category-count,
+[data-theme="dark"] .tag-list-item .tag-count {
+    color: #ccc;
+    background: rgba(73, 177, 245, 0.2);
+}
+
+[data-theme="dark"] .category-description,
+[data-theme="dark"] .tag-description {
+    color: #ccc;
+}
+
+/* 分类和标签页面的特殊效果 */
+.category-list-item:nth-child(odd),
+.tag-list-item:nth-child(odd) {
+    animation: slideInLeft 0.6s ease-out;
+}
+
+.category-list-item:nth-child(even),
+.tag-list-item:nth-child(even) {
+    animation: slideInRight 0.6s ease-out;
+}
+
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
