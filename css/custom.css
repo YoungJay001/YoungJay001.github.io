@@ -8,13 +8,13 @@
   
 /* 菜单字体大小设置 */
 #nav .menus_items .menus_item a {
-    font-size: 21px !important;
+    font-size: 15px !important;
     font-weight: 600 !important;
 }
 
 /* 子菜单字体大小设置 */
 #nav .menus_items .menus_item .menus_item_child a {
-    font-size: 19px !important;
+    font-size: 12px !important;
     font-weight: 500 !important;
 }
 
@@ -25,7 +25,7 @@
 
 /* 这里的2是代表导航栏的第2个元素，即有子菜单的元素，可以按自己需求修改 */
 .menus_items .menus_item:nth-child(5) .menus_item_child {
-    left: -70px;
+    left: -20px;
 }
 
 body {
