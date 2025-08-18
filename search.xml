@@ -4,7 +4,7 @@
   
     
     <entry>
-      <title>使用github+vercel部署静态网页+设置国内域名（最新）</title>
+      <title>cursor无限续杯</title>
       <link href="/2025/08/18/cursor%E6%97%A0%E9%99%90%E7%BB%AD%E6%9D%AF/"/>
       <url>/2025/08/18/cursor%E6%97%A0%E9%99%90%E7%BB%AD%E6%9D%AF/</url>
       
@@ -98,31 +98,6 @@
     
     
     <entry>
-      <title>Solidity优质例子（一）食品溯源智能合约</title>
-      <link href="/2025/07/01/Solidity%E4%BC%98%E8%B4%A8%E4%BE%8B%E5%AD%90%EF%BC%88%E4%B8%80%EF%BC%89%E9%A3%9F%E5%93%81%E6%BA%AF%E6%BA%90%E6%99%BA%E8%83%BD%E5%90%88%E7%BA%A6/"/>
-      <url>/2025/07/01/Solidity%E4%BC%98%E8%B4%A8%E4%BE%8B%E5%AD%90%EF%BC%88%E4%B8%80%EF%BC%89%E9%A3%9F%E5%93%81%E6%BA%AF%E6%BA%90%E6%99%BA%E8%83%BD%E5%90%88%E7%BA%A6/</url>
-      
-        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><blockquote><p> 这个智能合约<strong>FoodInfoItem</strong>的功能是管理食品的追溯信息，包括食品在不同阶段的流转、质量记录、消费者评分等。它通过区块链记录食品的生产、分销和销售过程，确保每一环节的透明和不可篡改性。</p><h3 id="实际生活中的用途："><a href="#实际生活中的用途：" class="headerlink" title="实际生活中的用途："></a>实际生活中的用途：</h3><ol><li><strong>食品安全和质量控制</strong>：<ul><li>该合约可以应用于食品行业，帮助消费者追溯食品的生产和流通过程，从生产、运输、储存到销售各环节，记录不可篡改，确保食品安全和质量。</li><li>生产商可以通过该合约记录食品的生产日期、制造工厂等信息，并让消费者查看食品的全生命周期，增加透明度。</li></ul></li><li><strong>消费者信任建立</strong>：<ul><li>消费者可以通过该合约查看食品的追溯信息，尤其是食品在生产和分销过程中的质量评分，从而放心购买高质量食品。用户的评分也可以为其他消费者提供参考。</li></ul></li><li><strong>供应链透明化</strong>：<ul><li>供应链中的每个参与者（如生产商、分销商等）都可以将他们的行为记录在区块链上，确保责任明确。如果食品在某个环节出现问题，可以追溯到具体的环节和负责人。</li></ul></li><li><strong>食品质量监控</strong>：<ul><li>食品公司可以通过合约定期检查低质量追溯记录，主动采取措施改进，避免因某个环节的质量问题影响整个产品声誉。</li></ul></li></ol><p>这种智能合约能帮助食品行业提升透明度，增强消费者对产品的信任，同时对质量问题的监控更具数据支撑。</p></blockquote><h3 id="合约的主要功能："><a href="#合约的主要功能：" class="headerlink" title="合约的主要功能："></a>合约的主要功能：</h3><p>1.合约初始化：</p><p><img src="/image1/3/15ca2e36ed5b45f587bc8a0b05371726.png" alt="img"><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动">编辑</p><p><img src="/image1/3/585d832dc8b64635a850853c4fecbabe.png" alt="img"><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动">编辑</p><blockquote><p>参数：产品名字，追溯环节的名称，当前环节的质量评分0-10，生产者地址</p></blockquote><p>编译部署成功之后：</p><p><img src="/image1/3/84056f64d66d4313a65ae747d23271c1.png" alt="img"><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动">编辑</p><h3 id=""><a href="#" class="headerlink" title=" "></a> </h3><p>1.通过分销商添加追溯信息</p><p><img src="/image1/3/fed0c7388c1348228610fd3fd1118959.png" alt="img"><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动">编辑</p><p> 相关代码：</p><p><img src="/image1/3/ca0b9bf7713346209d162198c32cf099.png" alt="img"><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动">编辑</p><p> 2.通过用户添加追溯信息</p><p><img src="/image1/3/cdb16aac2f434713ad42799caa2271fe.png" alt="img"><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动">编辑</p><p>相关代码：</p><p><img src="/image1/3/10d921f33bd94d0993c37c9ca630fa29.png" alt="img"><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动">编辑</p><p>3.用户评分（允许购买了食品的用户对食品进行评分或评论）</p><p><img src="/image1/3/f09bd68657904af69bbf19cbb955c4ae.png" alt="img"><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动">编辑</p><p><img src="/image1/3/b69d5cc554594577a06f165c18ce3842.png" alt="img"><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动">编辑</p><p>4.查询食品的追溯信息</p><p><strong>返回值</strong>：返回一个包含所有追溯记录的 <code>TraceInfo</code> 数组。</p><p><img src="/image1/3/95daf6f6d0ff488bb43a42ace266a161.png" alt="img"><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动">编辑</p><p>5.查询食品的基本信息</p><p><strong>返回值</strong>：</p><ul><li>最早的时间戳、追溯名称、食品名称、当前追溯名称、生产商地址、当前质量评分。</li></ul><p><img src="/image1/3/b213464ba4734b09b35b172476f63e8b.png" alt="img"><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动">编辑</p><p>6.查询用户评价</p><p><img src="/image1/3/464d7205391a427f9d9de768117e49c4.png" alt="img"><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动">编辑</p><p>7.查询低质量追溯记录（这个功能调试很久！！）</p><p>遍历所有追溯记录，筛选出质量评分低于阈值的记录，并返回。</p><p><img src="/image1/3/1d3cacb72dab4e2caff362398fb283e5.png" alt="img"><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动">编辑</p><blockquote><p>合约结束~获取私信我！     觉得有用一键三连！拜托</p></blockquote>]]></content>
-      
-      
-      <categories>
-          
-          <category> 智能合约 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> 智能合约 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>Solidity优质例子（二）物流的增删改查智能合约（附truffle测试）</title>
       <link href="/2025/07/01/Solidity%E4%BC%98%E8%B4%A8%E4%BE%8B%E5%AD%90%EF%BC%88%E4%BA%8C%EF%BC%89%E7%89%A9%E6%B5%81%E7%9A%84%E5%A2%9E%E5%88%A0%E6%94%B9%E6%9F%A5%E6%99%BA%E8%83%BD%E5%90%88%E7%BA%A6%EF%BC%88%E9%99%84truffle%E6%B5%8B%E8%AF%95%EF%BC%89/"/>
       <url>/2025/07/01/Solidity%E4%BC%98%E8%B4%A8%E4%BE%8B%E5%AD%90%EF%BC%88%E4%BA%8C%EF%BC%89%E7%89%A9%E6%B5%81%E7%9A%84%E5%A2%9E%E5%88%A0%E6%94%B9%E6%9F%A5%E6%99%BA%E8%83%BD%E5%90%88%E7%BA%A6%EF%BC%88%E9%99%84truffle%E6%B5%8B%E8%AF%95%EF%BC%89/</url>
@@ -148,23 +123,23 @@
     
     
     <entry>
-      <title>通过QQ微信的C盘快速清理方式</title>
-      <link href="/2025/07/01/%E9%80%9A%E8%BF%87qq%E5%92%8C%E5%BE%AE%E4%BF%A1%E7%9A%84%E5%BF%AB%E9%80%9F%E6%B8%85%E7%90%86c%E7%9B%98/"/>
-      <url>/2025/07/01/%E9%80%9A%E8%BF%87qq%E5%92%8C%E5%BE%AE%E4%BF%A1%E7%9A%84%E5%BF%AB%E9%80%9F%E6%B8%85%E7%90%86c%E7%9B%98/</url>
+      <title>Solidity优质例子（一）食品溯源智能合约</title>
+      <link href="/2025/07/01/Solidity%E4%BC%98%E8%B4%A8%E4%BE%8B%E5%AD%90%EF%BC%88%E4%B8%80%EF%BC%89%E9%A3%9F%E5%93%81%E6%BA%AF%E6%BA%90%E6%99%BA%E8%83%BD%E5%90%88%E7%BA%A6/"/>
+      <url>/2025/07/01/Solidity%E4%BC%98%E8%B4%A8%E4%BE%8B%E5%AD%90%EF%BC%88%E4%B8%80%EF%BC%89%E9%A3%9F%E5%93%81%E6%BA%AF%E6%BA%90%E6%99%BA%E8%83%BD%E5%90%88%E7%BA%A6/</url>
       
-        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p> <strong>目录</strong></p><p><a href="#一、清理临时缓存文件。">一、清理临时缓存文件。</a></p><p><a href="# 二、清理微信"> 二、清理微信</a></p><p><a href="# 三、清理QQ"> 三、清理QQ</a></p><hr><p>可能电脑小白不知道，qq和微信的聊天记录会默认记录在C盘，占用的内存会非常高。所以清理QQ和微信是最简单的C盘清理方法。</p><h3 id="一、清理临时缓存文件。"><a href="#一、清理临时缓存文件。" class="headerlink" title="一、清理临时缓存文件。"></a>一、清理临时缓存文件。</h3><p>1.win加R 输入%temp%，全选（Ctrl+A）删除。（结束后再清理一下回收站）</p><p><img src="/image1/fbbc3864d1317a9ec5f444abf1fb9768.png" alt="img"><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动">编辑</p><h3 id="二、清理微信"><a href="#二、清理微信" class="headerlink" title="二、清理微信"></a>二、清理微信</h3><p>1.打开微信，进入设置</p><p><img src="/image1/6a38ab58b52ded31c979b164b7196d29.png" alt="img"><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动">编辑</p><p> 注：我这是清理之后的</p><p>2.把文件默认保存更改到D盘</p><p><img src="/image1/bce65ec9951f98a2659c655d2451165c.png" alt="img"><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动">编辑</p><h3 id="三、清理QQ"><a href="#三、清理QQ" class="headerlink" title="三、清理QQ"></a>三、清理QQ</h3><p>1.进入QQ设置，打开个人文件夹。</p><p><img src="/image1/b2cb51eea9e3e7da43b7852a13c35819.png" alt="img"><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动">编辑</p><p> 2.清理Msg开头的这两个聊天记录文件</p><p><img src="/image1/92e7cb81c6fd76d0e438ac69774a8b56.png" alt="img"><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动">编辑</p><p> 3.修改文件存放目录到D盘</p><p><img src="/image1/19a963010a31820c285ccbe055a050fc.png" alt="img"><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动">编辑</p><p> 操作之前我只剩3G，操作之后剩16G，嘻嘻。（有帮助的话点个赞）</p><p><img src="/image1/53afbc821f3808b2c1e7469544b51dc7.png" alt="img"><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动">编辑</p>]]></content>
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><blockquote><p> 这个智能合约<strong>FoodInfoItem</strong>的功能是管理食品的追溯信息，包括食品在不同阶段的流转、质量记录、消费者评分等。它通过区块链记录食品的生产、分销和销售过程，确保每一环节的透明和不可篡改性。</p><h3 id="实际生活中的用途："><a href="#实际生活中的用途：" class="headerlink" title="实际生活中的用途："></a>实际生活中的用途：</h3><ol><li><strong>食品安全和质量控制</strong>：<ul><li>该合约可以应用于食品行业，帮助消费者追溯食品的生产和流通过程，从生产、运输、储存到销售各环节，记录不可篡改，确保食品安全和质量。</li><li>生产商可以通过该合约记录食品的生产日期、制造工厂等信息，并让消费者查看食品的全生命周期，增加透明度。</li></ul></li><li><strong>消费者信任建立</strong>：<ul><li>消费者可以通过该合约查看食品的追溯信息，尤其是食品在生产和分销过程中的质量评分，从而放心购买高质量食品。用户的评分也可以为其他消费者提供参考。</li></ul></li><li><strong>供应链透明化</strong>：<ul><li>供应链中的每个参与者（如生产商、分销商等）都可以将他们的行为记录在区块链上，确保责任明确。如果食品在某个环节出现问题，可以追溯到具体的环节和负责人。</li></ul></li><li><strong>食品质量监控</strong>：<ul><li>食品公司可以通过合约定期检查低质量追溯记录，主动采取措施改进，避免因某个环节的质量问题影响整个产品声誉。</li></ul></li></ol><p>这种智能合约能帮助食品行业提升透明度，增强消费者对产品的信任，同时对质量问题的监控更具数据支撑。</p></blockquote><h3 id="合约的主要功能："><a href="#合约的主要功能：" class="headerlink" title="合约的主要功能："></a>合约的主要功能：</h3><p>1.合约初始化：</p><p><img src="/image1/3/15ca2e36ed5b45f587bc8a0b05371726.png" alt="img"><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动">编辑</p><p><img src="/image1/3/585d832dc8b64635a850853c4fecbabe.png" alt="img"><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动">编辑</p><blockquote><p>参数：产品名字，追溯环节的名称，当前环节的质量评分0-10，生产者地址</p></blockquote><p>编译部署成功之后：</p><p><img src="/image1/3/84056f64d66d4313a65ae747d23271c1.png" alt="img"><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动">编辑</p><h3 id=""><a href="#" class="headerlink" title=" "></a> </h3><p>1.通过分销商添加追溯信息</p><p><img src="/image1/3/fed0c7388c1348228610fd3fd1118959.png" alt="img"><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动">编辑</p><p> 相关代码：</p><p><img src="/image1/3/ca0b9bf7713346209d162198c32cf099.png" alt="img"><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动">编辑</p><p> 2.通过用户添加追溯信息</p><p><img src="/image1/3/cdb16aac2f434713ad42799caa2271fe.png" alt="img"><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动">编辑</p><p>相关代码：</p><p><img src="/image1/3/10d921f33bd94d0993c37c9ca630fa29.png" alt="img"><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动">编辑</p><p>3.用户评分（允许购买了食品的用户对食品进行评分或评论）</p><p><img src="/image1/3/f09bd68657904af69bbf19cbb955c4ae.png" alt="img"><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动">编辑</p><p><img src="/image1/3/b69d5cc554594577a06f165c18ce3842.png" alt="img"><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动">编辑</p><p>4.查询食品的追溯信息</p><p><strong>返回值</strong>：返回一个包含所有追溯记录的 <code>TraceInfo</code> 数组。</p><p><img src="/image1/3/95daf6f6d0ff488bb43a42ace266a161.png" alt="img"><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动">编辑</p><p>5.查询食品的基本信息</p><p><strong>返回值</strong>：</p><ul><li>最早的时间戳、追溯名称、食品名称、当前追溯名称、生产商地址、当前质量评分。</li></ul><p><img src="/image1/3/b213464ba4734b09b35b172476f63e8b.png" alt="img"><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动">编辑</p><p>6.查询用户评价</p><p><img src="/image1/3/464d7205391a427f9d9de768117e49c4.png" alt="img"><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动">编辑</p><p>7.查询低质量追溯记录（这个功能调试很久！！）</p><p>遍历所有追溯记录，筛选出质量评分低于阈值的记录，并返回。</p><p><img src="/image1/3/1d3cacb72dab4e2caff362398fb283e5.png" alt="img"><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动">编辑</p><blockquote><p>合约结束~获取私信我！     觉得有用一键三连！拜托</p></blockquote>]]></content>
       
       
       <categories>
           
-          <category> 其他 </category>
+          <category> 智能合约 </category>
           
       </categories>
       
       
         <tags>
             
-            <tag> 生活 </tag>
+            <tag> 智能合约 </tag>
             
         </tags>
       
@@ -186,6 +161,31 @@
           
       </categories>
       
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>通过QQ微信的C盘快速清理方式</title>
+      <link href="/2025/07/01/%E9%80%9A%E8%BF%87qq%E5%92%8C%E5%BE%AE%E4%BF%A1%E7%9A%84%E5%BF%AB%E9%80%9F%E6%B8%85%E7%90%86c%E7%9B%98/"/>
+      <url>/2025/07/01/%E9%80%9A%E8%BF%87qq%E5%92%8C%E5%BE%AE%E4%BF%A1%E7%9A%84%E5%BF%AB%E9%80%9F%E6%B8%85%E7%90%86c%E7%9B%98/</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p> <strong>目录</strong></p><p><a href="#一、清理临时缓存文件。">一、清理临时缓存文件。</a></p><p><a href="# 二、清理微信"> 二、清理微信</a></p><p><a href="# 三、清理QQ"> 三、清理QQ</a></p><hr><p>可能电脑小白不知道，qq和微信的聊天记录会默认记录在C盘，占用的内存会非常高。所以清理QQ和微信是最简单的C盘清理方法。</p><h3 id="一、清理临时缓存文件。"><a href="#一、清理临时缓存文件。" class="headerlink" title="一、清理临时缓存文件。"></a>一、清理临时缓存文件。</h3><p>1.win加R 输入%temp%，全选（Ctrl+A）删除。（结束后再清理一下回收站）</p><p><img src="/image1/fbbc3864d1317a9ec5f444abf1fb9768.png" alt="img"><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动">编辑</p><h3 id="二、清理微信"><a href="#二、清理微信" class="headerlink" title="二、清理微信"></a>二、清理微信</h3><p>1.打开微信，进入设置</p><p><img src="/image1/6a38ab58b52ded31c979b164b7196d29.png" alt="img"><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动">编辑</p><p> 注：我这是清理之后的</p><p>2.把文件默认保存更改到D盘</p><p><img src="/image1/bce65ec9951f98a2659c655d2451165c.png" alt="img"><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动">编辑</p><h3 id="三、清理QQ"><a href="#三、清理QQ" class="headerlink" title="三、清理QQ"></a>三、清理QQ</h3><p>1.进入QQ设置，打开个人文件夹。</p><p><img src="/image1/b2cb51eea9e3e7da43b7852a13c35819.png" alt="img"><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动">编辑</p><p> 2.清理Msg开头的这两个聊天记录文件</p><p><img src="/image1/92e7cb81c6fd76d0e438ac69774a8b56.png" alt="img"><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动">编辑</p><p> 3.修改文件存放目录到D盘</p><p><img src="/image1/19a963010a31820c285ccbe055a050fc.png" alt="img"><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动">编辑</p><p> 操作之前我只剩3G，操作之后剩16G，嘻嘻。（有帮助的话点个赞）</p><p><img src="/image1/53afbc821f3808b2c1e7469544b51dc7.png" alt="img"><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动">编辑</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 其他 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 生活 </tag>
+            
+        </tags>
       
     </entry>
     
